@@ -1,0 +1,96 @@
+.header {
+    position: relative;
+}
+
+.bgHeader {
+    min-width: 100%;
+}
+
+#logoDevJobs {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
+
+.rectangle {
+    width: 3rem; 
+    height: 1.5rem;
+    background-color: white;
+    border-radius: .75rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.toggleCircle {
+    border-radius: 50%;
+    background-color: #5964E0;
+    width: .875rem;
+    height: .875rem;
+    margin: 7px;
+}
+
+
+.heaederToggleFlexxer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    justify-content: space-between;
+}
+
+.headerInputs {
+    border-radius: .375rem;
+    width: 80%;
+    height: 5rem;
+    background-color: white;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+}
+
+input {
+    border: none;
+    height: 98%;
+}
+
+.headerInputs > input:nth-child(1) {
+    width: 40%;
+    border-right: 1px solid lightgray;
+}
+
+.headerInputs > input:nth-child(2) {
+    width: 20%;
+    border-right: 1px solid lightgray;
+}
+
+.searchBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 40%;
+}
+.searchBox > input {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: lightgray;
+}
+
+.searchBox > button {
+    background-color: #5964E0;
+    color: white;
+    width: 7.6875rem;
+    height: 3rem;
+    border-radius: .3125rem;
+    border: none;
+}
