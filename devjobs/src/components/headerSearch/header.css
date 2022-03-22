@@ -58,19 +58,17 @@
     align-items: center;
 }
 
-input {
+.inputWrapper > input {
     border: none;
     height: 98%;
 }
 
-.headerInputs > input:nth-child(1) {
-    width: 40%;
-    border-right: 1px solid lightgray;
+.headerInputs > .inputWrapper > input:nth-child(1) {
+    width: 100%;
 }
 
-.headerInputs > input:nth-child(2) {
-    width: 20%;
-    border-right: 1px solid lightgray;
+.headerInputs > .inputWrapper > input:nth-child(2) {
+    width: 100%;
 }
 
 .searchBox {
@@ -93,4 +91,18 @@ input {
     height: 3rem;
     border-radius: .3125rem;
     border: none;
+}
+
+.inputWrapper {
+    position: relative;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border-right: 1px solid lightgray;
+}
+
+.inputWrapper > img {
+    padding: 0 20px; 
 }
