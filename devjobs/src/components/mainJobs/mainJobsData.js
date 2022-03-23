@@ -1,6 +1,7 @@
 import React from 'react'
 
-export default function mainJobsData() {
+
+export default function MainJobsData() {
     
   
     return (

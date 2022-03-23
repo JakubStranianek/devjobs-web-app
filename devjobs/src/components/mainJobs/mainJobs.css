@@ -20,4 +20,94 @@
     width: 50px; 
     height: 50px; 
     border-radius: 15px;
+    margin-left: 32px;
+    margin-top: -25px;
+}
+
+.jobContent {
+    margin-left: 32px;
+}
+
+.jobContent > p {
+    color: #6E8098;
+    font-size: 16px;
+}
+
+.jobContent > h1 > a {
+    color: #19202D;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.jobContent > h6 {
+    color: #5964E0;
+    font-size: 14px;
+}
+
+
+/* HEADER PART */
+.headerInputs {
+    border-radius: .375rem;
+    width: 80%;
+    height: 5rem;
+    background-color: white;
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+}
+
+.inputWrapper > input {
+    border: none;
+    height: 98%;
+}
+
+.inputWrapper > input:focus {
+    outline: none;
+}
+
+.headerInputs > .inputWrapper > input:nth-child(1) {
+    width: 100%;
+}
+
+.headerInputs > .inputWrapper > input:nth-child(2) {
+    width: 100%;
+}
+
+.searchBox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 40%;
+}
+.searchBox > input {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: lightgray;
+}
+
+.searchBox > button {
+    background-color: #5964E0;
+    color: white;
+    width: 7.6875rem;
+    height: 3rem;
+    border-radius: .3125rem;
+    border: none;
+}
+
+.inputWrapper {
+    position: relative;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border-right: 1px solid lightgray;
+}
+
+.inputWrapper > img {
+    padding: 0 20px; 
 }

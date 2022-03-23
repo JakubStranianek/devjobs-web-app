@@ -1,20 +1,68 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./mainJobs.css"
 import data from "./data.json"
+import { Link } from "react-router-dom"
 
-export default function mainJobs() {
+export default function MainJobs() {
+  const [jobData, setJobData] = useState(data);
+  const [searchOne, setSearchOne] = useState("");
+  const [searchTwo, setSearchTwo] = useState("");
+
+  const checkFullTime = (e) => {
+    const checkbox = document.getElementById("checkBoxFullTime").checked
+    console.log(checkbox)
+    if (checkbox === true) {
+      const filteredData = data.filter((job) => job.contract === "Full Time");
+      setJobData(filteredData)
+    } else {
+      setJobData(data)
+    }
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    checkFullTime();
+  }
+  
   return (
     <div className='mainJobsWrapper'>
-      
-      {data.map(index => 
-        <div className='job' key={"job/" + index.company}>
+      <div className='headerInputs'>
+            <div className='inputWrapper'>
+                <img src="../../../assets/desktop/icon-search.svg" alt="searchIcon"></img>
+                <input type="text" placeholder='Filter by title, companie, expertise...' value={searchOne} onChange={e => (setSearchOne(e.target.value))}/>
+            </div>
+
+            <div className='inputWrapper'>
+                <img src="../../../assets/desktop/icon-search.svg" alt="locationIcon"></img>
+                <input type="text" placeholder='Filter by location...' value={searchTwo} onChange={e => (setSearchTwo(e.target.value))} />
+            </div>
+
+            <div className='searchBox'>
+                <input type="checkbox" id="checkBoxFullTime"></input>
+                <label htmlFor="checkBoxFullTime"><strong>Full Time Only</strong></label>
+                <button onClick={handleSubmit}>Search</button>
+            </div>
+        </div>
+
+      {jobData?.filter( (job) => {
+        if (searchOne === "" && searchTwo === "") {
+          return job;
+        }
+        if (job.position.toLowerCase().includes(searchOne.toLowerCase()) || job.company.toLowerCase().includes(searchOne.toLowerCase())) 
+        if (job.location.toLowerCase().includes(searchTwo.toLowerCase())) 
+        return job;
+      }).map(index => 
+        <div className='job' key={"job/" + index.company + index.id}>
           <div style={{backgroundColor: index.logoBackground}} className="logoJob" >
             <img src={index.logo} alt={index.company}></img>
           </div>
+
+          <div className='jobContent'>
             <p>{index.postedAt + " . " + index.contract}</p>
-            <h1>{index.position}</h1>
+            <h1><Link to={`/jobs/${index.position}`}>{index.position}</Link></h1>
             <p>{index.company}</p>
             <h6>{index.location}</h6>
+          </div>
         </div>
       )}
     </div>
