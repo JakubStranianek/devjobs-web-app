@@ -1,11 +1,10 @@
 .jobDetailsFlexxer {
-    display: flex;
-    justify-content: center;
     background-color: #F4F6F8;
 }
 
 .headerJobDetails {
-    width: 600px;
+    z-index: 99;
+    position: relative;
     background-color: white;
     margin-top: -50px;
     z-index: 1;
@@ -20,26 +19,42 @@
     align-items: center;
 }
 
-.headerTextWrapper {
+.flexxer {
     display: flex;
     flex-direction: column;
 }
 
-.headerTextWrapper h6 {
+.row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flexxer h6 {
     font-size: 24px;
     font-weight: bold;
     color: #19202D;
     margin: 0;
 }
 
-.headerTextWrapper p {
+.flexxer p {
     font-size: 16px;
     color: #6E8098;
     margin: 0;
 }
 
+.row > div:nth-child(1) > h1:nth-child(2){
+    font-size: 28px;
+    color: #19202D;
+}
+
+.row > div:nth-child(1) > h6:nth-child(3) {
+    font-size: 14px;
+    color: #5964E0;
+}
+
 .textAndButtonFlex {
-    width: 70%;
+    width: 80%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -49,7 +64,7 @@
     width: 80px;
 }
 
-#linkBg {
+.linkBg {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,18 +72,104 @@
     background-color: rgba(147, 155, 244, .2);
     width: 147px;
     height: 48px;
-}
-
-#linkBg > a {
     color: #5964E0;
     font-weight: bold;
     font-size: 16px;
     text-decoration: none;
 }
 
+.linkBg > button {
+    color: #5964E0;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    background: none;
+}
+
+.linkBgColorBlue {
+    background-color: #5964E0;
+}
+
+.linkBgColorBlue > button {
+    color: #FFFFFF;
+}
+
 /* Job details text */
+.headerJobDetails, .jobDetailsMain {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .jobDetailsMain {
-    width: 600px;
+    margin-top: 80px;
     background-color: white;
+}
+
+.jobDetailsFooter {
+    width: 100%;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+}
+
+.flexFooter {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.widthOfContent {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+}
+
+.widthOfContent > p, li {
+    color: #6E8098;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li::before {
+    content: "\2022";
+    color: #5964E0;
+    font-size: 20px;
+    margin-right: 30px;
+}
+
+ol {list-style: none; counter-reset: li; padding: 0;}
+ol li::before {content: counter(li); color: #5964E0; margin-right: 30px;}
+
+ol li {counter-increment: li}
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 991px) {
+    /* start of large tablet styles */
+    
+    }
+    
+    @media screen and (max-width: 767px) {
+    /* start of medium tablet styles */
+    
+    }
+    
+    @media screen and (max-width: 479px) {
+    /* start of phone styles */
+    
 }

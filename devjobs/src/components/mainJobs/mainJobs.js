@@ -23,23 +23,33 @@ export default function MainJobs() {
     e.preventDefault();
     checkFullTime();
   }
+
   
   return (
     <div className='mainJobsWrapper'>
       <div className='headerInputs'>
-            <div className='inputWrapper'>
+            <div className='inputWrapper' >
                 <img src="../../../assets/desktop/icon-search.svg" alt="searchIcon"></img>
                 <input type="text" placeholder='Filter by title, companie, expertise...' value={searchOne} onChange={e => (setSearchOne(e.target.value))}/>
+                
+                <button className='filterButton'>
+                  <img src="../../../assets/mobile/icon-filter.svg" alt="filterIcon"></img>
+                </button>
+                
+                <button className='searchButton'>
+                  <img src="../../../assets/desktop/icon-search.svg" alt="searchIcon" className='filter-white'></img>
+                </button>
+
             </div>
 
             <div className='inputWrapper'>
-                <img src="../../../assets/desktop/icon-search.svg" alt="locationIcon"></img>
+                <img src="../../../assets/desktop/icon-location.svg" alt="locationIcon"></img>
                 <input type="text" placeholder='Filter by location...' value={searchTwo} onChange={e => (setSearchTwo(e.target.value))} />
             </div>
 
             <div className='searchBox'>
                 <input type="checkbox" id="checkBoxFullTime"></input>
-                <label htmlFor="checkBoxFullTime"><strong>Full Time Only</strong></label>
+                <label htmlFor='checkBoxFullTime'></label>
                 <button onClick={handleSubmit}>Search</button>
             </div>
         </div>

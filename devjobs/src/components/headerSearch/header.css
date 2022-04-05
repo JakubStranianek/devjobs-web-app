@@ -25,11 +25,22 @@
 }
 
 .toggleCircle {
+    border: none;
     border-radius: 50%;
     background-color: #5964E0;
     width: .875rem;
     height: .875rem;
-    margin: 7px;
+    margin-left: 7px;
+}
+
+.left {
+    margin-left: 7px;
+    transition: 0.2s;
+}
+
+.right {
+    margin-left: 28px;
+    transition: 0.2s;
 }
 
 
