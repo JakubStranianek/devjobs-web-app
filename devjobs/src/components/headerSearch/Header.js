@@ -2,12 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import "./header.css"
 
-export default function Header() {
-  const [isActive, setIsActive] = useState("false")
-
-  const handleToggle = () => {
-    setIsActive(!isActive);
-  }
+export default function Header(props) {
 
   return (
     <div className='header'>
@@ -17,7 +12,7 @@ export default function Header() {
         <div className='heaederToggleFlexxer'>
             <img src="../../../assets/desktop/icon-sun.svg" alt="sunIcon"></img>
             <div className='rectangle'>
-                <button onClick={handleToggle} className={isActive ? "toggleCircle left" : "toggleCircle right"}></button>
+                <button onClick={props.toggle} className={props.mode ? "toggleCircle left" : "toggleCircle right"}></button>
             </div>
             <img src="../../../assets/desktop/icon-moon.svg" alt="moonIcon"></img>
         </div>

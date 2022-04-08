@@ -6,14 +6,19 @@ import {Routes, Route, Navigate} from "react-router-dom"
 import {useState} from "react"
 
 function App() {
-  
+  const [isActive, setIsActive] = useState("false")
+
+  const handleToggle = () => {
+    setIsActive(!isActive);
+  }
+
   return (
-    <div className="App">
-      <Header />   
+    <div className={isActive ? "App" : "AppDark"}>
+      <Header mode={isActive} toggle={handleToggle}/>   
 
     <Routes>
       <Route path='/' element={<Navigate to="/jobs" />} />
-      <Route path='/jobs' element={<Main />} />
+      <Route path='/jobs' element={<Main mode={isActive}/>} />
       <Route path='/jobs/:position' element={<JobDetails />} />
     </Routes>
 

@@ -3,7 +3,7 @@ import "./mainJobs.css"
 import data from "./data.json"
 import { Link } from "react-router-dom"
 
-export default function MainJobs() {
+export default function MainJobs(props) {
   const [jobData, setJobData] = useState(data);
   const [searchOne, setSearchOne] = useState("");
   const [searchTwo, setSearchTwo] = useState("");
@@ -62,14 +62,14 @@ export default function MainJobs() {
         if (job.location.toLowerCase().includes(searchTwo.toLowerCase())) 
         return job;
       }).map(index => 
-        <div className='job' key={"job/" + index.company + index.id}>
+        <div className={props.mode === "false" ? "job" : "jobDark"} key={"job/" + index.company + index.id}>
           <div style={{backgroundColor: index.logoBackground}} className="logoJob" >
             <img src={index.logo} alt={index.company}></img>
           </div>
 
           <div className='jobContent'>
             <p>{index.postedAt + " . " + index.contract}</p>
-            <h1><Link to={`/jobs/${index.position}`}>{index.position}</Link></h1>
+            <h1><Link to={`/jobs/${index.position}`} className={props.mode === "false" ? "blackText" : "whiteText"}>{index.position}</Link></h1>
             <p>{index.company}</p>
             <h6>{index.location}</h6>
           </div>

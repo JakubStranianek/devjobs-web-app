@@ -13,6 +13,12 @@
     border-radius: 6px;
 }
 
+.jobDark {
+    width: 480px;
+    background-color: #19202D;
+    border-radius: 6px;
+}
+
 .logoJob {
     display: flex;
     justify-content: center;
@@ -34,7 +40,6 @@
 }
 
 .jobContent > h1 > a {
-    color: #19202D;
     font-size: 20px;
     text-decoration: none;
 }
@@ -113,6 +118,7 @@
     border: none;
     background: none;
     display: none;
+    margin-right: 15px;
 }
 
 .filter-white{
@@ -134,6 +140,15 @@
 .inputWrapper > img {
     padding: 0 20px; 
 }
+
+.blackText {
+    color: black;
+} 
+
+.whiteText {
+    color: white;
+}
+
 
 label[for="checkBoxFullTime"]:before{content:'Full Time Only'; font-weight: bold;}
 
