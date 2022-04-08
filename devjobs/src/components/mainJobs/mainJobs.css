@@ -19,6 +19,7 @@
     border-radius: 6px;
 }
 
+
 .logoJob {
     display: flex;
     justify-content: center;
@@ -64,21 +65,27 @@
     align-items: center;
 }
 
+.headerInputsDark {
+    border-radius: .375rem;
+    width: 80%;
+    height: 5rem;
+    background-color: #19202D;
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+}
+
 .inputWrapper > input {
     border: none;
     height: 98%;
+    width: 100%;
 }
 
 .inputWrapper > input:focus {
     outline: none;
-}
-
-.headerInputs > .inputWrapper > input:nth-child(1) {
-    width: 100%;
-}
-
-.headerInputs > .inputWrapper > input:nth-child(2) {
-    width: 100%;
 }
 
 .searchBox {
@@ -147,6 +154,16 @@
 
 .whiteText {
     color: white;
+}
+
+.blackBg {
+    background-color: #19202D;
+    color: white;
+} 
+
+.whiteBg {
+    background-color: white;
+    color: #19202D;
 }
 
 

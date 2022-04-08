@@ -24,13 +24,12 @@ export default function MainJobs(props) {
     checkFullTime();
   }
 
-  
   return (
     <div className='mainJobsWrapper'>
-      <div className='headerInputs'>
-            <div className='inputWrapper' >
+      <div className={props.mode === false ? "headerInputsDark" : "headerInputs"}>
+            <div className="inputWrapper">
                 <img src="../../../assets/desktop/icon-search.svg" alt="searchIcon"></img>
-                <input type="text" placeholder='Filter by title, companie, expertise...' value={searchOne} onChange={e => (setSearchOne(e.target.value))}/>
+                <input type="text" placeholder='Filter by title, companie, expertise...' value={searchOne} onChange={e => (setSearchOne(e.target.value))} className={props.mode === false ? "blackBg" : "whiteBg"}/>
                 
                 <button className='filterButton'>
                   <img src="../../../assets/mobile/icon-filter.svg" alt="filterIcon"></img>
@@ -44,12 +43,12 @@ export default function MainJobs(props) {
 
             <div className='inputWrapper'>
                 <img src="../../../assets/desktop/icon-location.svg" alt="locationIcon"></img>
-                <input type="text" placeholder='Filter by location...' value={searchTwo} onChange={e => (setSearchTwo(e.target.value))} />
+                <input type="text" placeholder='Filter by location...' value={searchTwo} onChange={e => (setSearchTwo(e.target.value))} className={props.mode === false ? "blackBg" : "whiteBg"} />
             </div>
 
             <div className='searchBox'>
                 <input type="checkbox" id="checkBoxFullTime"></input>
-                <label htmlFor='checkBoxFullTime'></label>
+                <label htmlFor='checkBoxFullTime' className={props.mode === false ? "whiteText" : "blackText"}></label>
                 <button onClick={handleSubmit}>Search</button>
             </div>
         </div>
@@ -62,14 +61,14 @@ export default function MainJobs(props) {
         if (job.location.toLowerCase().includes(searchTwo.toLowerCase())) 
         return job;
       }).map(index => 
-        <div className={props.mode === "false" ? "job" : "jobDark"} key={"job/" + index.company + index.id}>
+        <div className={props.mode === false ? "jobDark" : "job"} key={"job/" + index.company + index.id}>
           <div style={{backgroundColor: index.logoBackground}} className="logoJob" >
             <img src={index.logo} alt={index.company}></img>
           </div>
 
           <div className='jobContent'>
             <p>{index.postedAt + " . " + index.contract}</p>
-            <h1><Link to={`/jobs/${index.position}`} className={props.mode === "false" ? "blackText" : "whiteText"}>{index.position}</Link></h1>
+            <h1><Link to={`/jobs/${index.position}`} className={props.mode === false ? "whiteText" : "blackText"}>{index.position}</Link></h1>
             <p>{index.company}</p>
             <h6>{index.location}</h6>
           </div>
