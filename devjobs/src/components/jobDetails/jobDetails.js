@@ -4,13 +4,13 @@ import {useParams} from "react-router-dom"
 import data from "../mainJobs/data.json"
 import "./jobDetails.css"
 
-export default function JobDetails() {
+export default function JobDetails(props) {
   const {position} = useParams()
   const job = data.find(job => job.position === position)
 
   return (
-    <div className='jobDetailsFlexxer'>
-      <section className='headerJobDetails'> 
+    <div className={props.mode === false ? "jobDetailsFlexxerDark" : "jobDetailsFlexxer"}>
+      <section className={props.mode === false ? "headerJobDetails bgBlack colorWhite" : "headerJobDetails"}> 
         <div style={{backgroundColor: job.logoBackground}} className='jobDetailsLogo'>
           <img src={job.logo} alt="jobLogoDetail"></img>
         </div>
@@ -29,12 +29,12 @@ export default function JobDetails() {
       </section>
     
     
-      <section className='jobDetailsMain'>
+      <section className={props.mode === false ? "jobDetailsMainDark colorWhite" : "jobDetailsMain"}>
       <div className='widthOfContent'>
         <div className='flexxer row'>  
           <div className='mt-50'>
             <p>{job.postedAt + " . " + job.contract}</p>
-            <h1>{job.position}</h1>
+            <h1 className={props.mode === false ? "colorWhite" : ""}>{job.position}</h1>
             <h6>{job.location}</h6>
           </div>
           
@@ -64,8 +64,8 @@ export default function JobDetails() {
       </div>  
       </section> 
 
-      <section className='jobDetailsFooter'>
-          <div className='flexFooter'>
+      <section className={props.mode === false ? "jobDetailsFooterDark" : "jobDetailsFooter"}>
+          <div className={props.mode === false ? "flexFooter colorWhite" : "flexFooter"}>
             <div>
               <h3>{job.position}</h3>
               <p>{job.company}</p>

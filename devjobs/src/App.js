@@ -19,7 +19,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Navigate to="/jobs" />} />
       <Route path='/jobs' element={<Main mode={isActive}/>} />
-      <Route path='/jobs/:position' element={<JobDetails />} />
+      <Route path='/jobs/:position' element={<JobDetails mode={isActive}/>} />
     </Routes>
 
     </div>
