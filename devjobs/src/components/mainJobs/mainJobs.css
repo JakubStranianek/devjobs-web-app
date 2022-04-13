@@ -85,7 +85,7 @@
     width: 100%;
 }
 
-.inputWrapper > input:focus {
+input:focus {
     outline: none;
 }
 
@@ -96,7 +96,8 @@
     justify-content: space-evenly;
     width: 40%;
 }
-.searchBox > input {
+.searchBox > input,
+.searchModalBox > input {
     width: 1.5rem;
     height: 1.5rem;
     background-color: lightgray;
@@ -168,6 +169,79 @@
 }
 
 
+/* Modal POPUP */
+.modal, .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99;
+}
+
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(49,49,49,0.8);
+}
+
+.active-modal {
+    overflow-y: hidden;
+}
+
+.modal-content {
+    width: 90%;
+    height: 200px;
+    background-color: white;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modalInput {
+    width: 90%;
+    height: 40px;
+    display: flex;
+}
+
+.modalInput > img {
+    padding: 8px;
+}
+
+.modalInput > input {
+    border: none;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+hr {
+    width: 100%;
+    border-color: #6E8098;
+    border-top: 1px;
+}
+
+.searchModalBox {
+    width: 90%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.modal-content > button {
+    width: 90%;
+    background-color: #5964E0;
+    color: white;
+    height: 48px;
+    border: none;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
 label[for="checkBoxFullTime"]:before{content:'Full Time Only'; font-weight: bold;}
 
 /* RESPONSIVE */
@@ -188,6 +262,8 @@ label[for="checkBoxFullTime"]:before{content:'Full Time Only'; font-weight: bold
     }
     
     @media screen and (max-width: 479px) {
+        label[for="checkBoxFullTime"]:before{content:'Full Time Only'; padding-left: 15px;}
+
         div.inputWrapper:nth-child(2), .searchBox {
             display: none;
         }
