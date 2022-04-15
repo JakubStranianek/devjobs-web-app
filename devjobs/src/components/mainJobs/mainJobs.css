@@ -58,10 +58,8 @@
     width: 80%;
     height: 5rem;
     background-color: white;
-    position: absolute;
-    top: 22%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    margin-top: -300px;
     display: flex;
     align-items: center;
 }
@@ -71,10 +69,8 @@
     width: 80%;
     height: 5rem;
     background-color: #19202D;
-    position: absolute;
-    top: 22%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    margin-top: -300px;
     display: flex;
     align-items: center;
 }
@@ -248,7 +244,7 @@ label[for="checkBoxFullTime"]:before{content:'Full Time Only'; font-weight: bold
 
 @media screen and (max-width: 991px) {
     label[for="checkBoxFullTime"]:before{font-size: 14px;} 
-    
+
         .searchBox > button {
             width: 4.7rem;
             height: 2.5rem;
